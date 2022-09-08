@@ -1,5 +1,5 @@
 #FROM reslp/mamba:0.21.1
-FROM conda-forge/mambaforge3:4.14.0-0
+FROM conda-forge/mambaforge:4.14.0-0
 
 RUN conda config --add channels defaults && \
 	conda config --add channels bioconda && \
