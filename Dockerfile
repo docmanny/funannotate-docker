@@ -1,11 +1,12 @@
-FROM reslp/mamba:0.21.1
+#FROM reslp/mamba:0.21.1
+FROM conda-forge/mambaforge3:4.14.0-0
 
 RUN conda config --add channels defaults && \
 	conda config --add channels bioconda && \
 	conda config --add channels conda-forge && \
 	#mamba install -y funannotate=1.8.11 "python>=3.6,<3.9" "augustus=3.4" "trinity==2.8.5" "evidencemodeler==1.1.1" "pasa==2.4.1" "codingquarry==2.0" "perl=5.26.2" "diamond=2.0.7"
 	mamba install -y augustus=3.4 && \
-	mamba install -y funannotate=1.8.11 "python>=3.6,<3.9"
+	mamba install -y funannotate=1.8.13 "python>=3.6,<3.9" # newest version as of 2022-08-09
 # some of the mamba packages need to be version controlled for the set PATH variables to be correct. See below.
 
 WORKDIR /software
